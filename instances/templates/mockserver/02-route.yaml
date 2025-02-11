@@ -1,4 +1,4 @@
----
+{{- if .Values.authorino.enabled }}
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -15,3 +15,4 @@ spec:
     name: mockserver
     weight: 100
   wildcardPolicy: None
+{{- end }}

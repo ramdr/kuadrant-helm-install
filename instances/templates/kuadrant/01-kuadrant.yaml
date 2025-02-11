@@ -1,4 +1,4 @@
-{{- if  .Values.kuadrant.enabled }}
+{{- if eq .Values.authorino.enabled false }}
 apiVersion: kuadrant.io/v1beta1
 kind: Kuadrant
 metadata:
