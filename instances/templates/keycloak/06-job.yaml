@@ -19,7 +19,7 @@ spec:
           /opt/keycloak/bin/kcadm.sh create users --server http://localhost:8080/ --realm master --user $username --password $password -s username=$ADMIN_USERNAME -s enabled=true --no-config &&
           /opt/keycloak/bin/kcadm.sh set-password --server http://localhost:8080/ --realm master --user $username --password $password --username $ADMIN_USERNAME --new-password $ADMIN_PASSWORD --no-config &&
           /opt/keycloak/bin/kcadm.sh add-roles --server http://localhost:8080/ --realm master --user $username --password $password --uusername $ADMIN_USERNAME --rolename admin --no-config"
-        image: quay.io/rhn_support_azgabur/alpine/k8s:latest  # kubectl
+        image: registry.redhat.io/openshift4/ose-cli:latest # kubectl
         name: set-no-ssl
         envFrom:
         - secretRef:

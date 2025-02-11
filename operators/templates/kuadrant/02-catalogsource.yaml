@@ -1,4 +1,4 @@
-{{- if .Values.kuadrant.indexImage }}
+{{- if and .Values.kuadrant.indexImage (eq .Values.authorino.enabled false) }}
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:

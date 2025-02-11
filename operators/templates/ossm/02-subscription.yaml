@@ -1,4 +1,4 @@
-{{if eq .Values.istio.istioProvider "ossm"}}
+{{-  if and (eq .Values.istio.istioProvider "ossm") (eq .Values.authorino.enabled false) }}
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:

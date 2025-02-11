@@ -5,7 +5,9 @@ metadata:
   name: mockserver
   namespace: {{ .Values.tools.namespace }}
 spec:
+{{- if eq .Values.authorino.enabled false }}
   type: LoadBalancer
+{{- end }}
   ports:
     - name: 1080-tcp
       port: 1080

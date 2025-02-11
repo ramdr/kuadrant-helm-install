@@ -1,4 +1,4 @@
-{{ if eq .Values.istio.istioProvider "sail" }}
+{{- if and (eq .Values.istio.istioProvider "sail") (eq .Values.authorino.enabled false) }}
 apiVersion: operator.istio.io/v1alpha1
 kind: Istio
 metadata:
@@ -13,4 +13,4 @@ spec:
     pilot:
       autoscaleMin: 2
   version: {{ .Values.istio.sail.version }}
-{{end}}
+{{- end }}

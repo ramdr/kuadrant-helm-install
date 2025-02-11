@@ -69,7 +69,7 @@ spec:
       - command:
         - /bin/bash
         - /scripts/run.sh
-        image: quay.io/rh_integration/ci-toolbox:latest
+        image: registry.redhat.io/openshift4/ose-cli
         name: post-install
         volumeMounts:
         - name: script-volume

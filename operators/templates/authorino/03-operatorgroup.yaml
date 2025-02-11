@@ -1,0 +1,9 @@
+{{- if ne .Values.authorino.namespace "openshift-operators" }}
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: kuadrant-system
+  namespace: {{ .Values.authorino.namespace }}
+spec:
+  upgradeStrategy: Default
+{{- end }}

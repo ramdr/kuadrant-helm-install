@@ -1,0 +1,8 @@
+{{ if ne .Values.authorino.namespace "openshift-operators" }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: {{ .Values.authorino.namespace }}
+spec: {}
+{{ end }}

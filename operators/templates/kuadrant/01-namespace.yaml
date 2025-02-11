@@ -1,4 +1,4 @@
-{{ if ne .Values.kuadrant.namespace "openshift-operators" }}
+{{ if and (ne .Values.kuadrant.namespace "openshift-operators") (eq .Values.authorino.enabled false) }}
 apiVersion: v1
 kind: Namespace
 metadata:

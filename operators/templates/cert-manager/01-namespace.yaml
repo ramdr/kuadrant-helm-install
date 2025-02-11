@@ -1,6 +1,8 @@
+{{- if eq .Values.authorino.enabled false }}
 apiVersion: v1
 kind: Namespace
 metadata:
   creationTimestamp: null
   name: cert-manager-operator
 spec: {}
+{{- end }}

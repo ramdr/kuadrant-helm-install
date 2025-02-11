@@ -1,0 +1,4 @@
+{{- if  .Values.authorino.enabled  }}
+{{ $args := dict "namespace" .Values.authorino.namespace "subscription" "authorino-operator" }}
+{{ include "kuadrant-operators.olm-wait" $args }}
+{{- end }}

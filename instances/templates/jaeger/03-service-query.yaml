@@ -14,5 +14,7 @@ spec:
       targetPort: 16686
   selector:
     jaeger-infra: jaeger-pod
+{{- if eq .Values.authorino.enabled false }}
   type: LoadBalancer
+{{- end }}
 {{end}}

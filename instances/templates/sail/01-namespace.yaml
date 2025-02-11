@@ -1,8 +1,8 @@
-{{ if eq .Values.istio.istioProvider "sail" }}
+{{ if and (eq .Values.istio.istioProvider "sail") (eq .Values.authorino.enabled false) }}
 apiVersion: v1
 kind: Namespace
 metadata:
   creationTimestamp: null
   name: {{ .Values.istio.namespace }}
 spec: {}
-{{end}}
+{{- end }}

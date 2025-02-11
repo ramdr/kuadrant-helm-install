@@ -1,0 +1,10 @@
+{{- if .Values.authorino.indexImage }}
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: authorino-iib-catalog
+  namespace: {{ .Values.authorino.namespace }}
+spec:
+  image: {{ .Values.authorino.indexImage }}
+  sourceType: grpc
+{{- end }}

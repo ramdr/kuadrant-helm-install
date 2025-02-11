@@ -1,4 +1,4 @@
-{{if eq .Values.istio.istioProvider "ossm"}}
+{{- if and (eq .Values.istio.istioProvider "ossm") (eq .Values.authorino.enabled false) }}
 apiVersion: maistra.io/v2
 kind: ServiceMeshControlPlane
 metadata:
@@ -27,4 +27,4 @@ spec:
       pilot:
         deployment:
           replicas: 2
-{{end}}
+{{- end }}

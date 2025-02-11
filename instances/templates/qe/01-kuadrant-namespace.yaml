@@ -3,7 +3,11 @@ apiVersion: v1
 kind: Namespace
 metadata:
   creationTimestamp: null
+{{- if .Values.authorino.enabled }}
+  name: authorino
+{{- else }}
   name: kuadrant
+{{- end }}
 spec: {}
 status: {}
 {{end}}
